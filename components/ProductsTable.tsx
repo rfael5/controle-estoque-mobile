@@ -34,8 +34,13 @@ const ProductsTable = () => {
             keyExtractor={(item:any) => item.id}
             renderItem={({ item }) => (
               <View style={styles.rowContainer}>
-                <Text style={styles.cell1}>{item.nomeProduto}</Text>
-                <Text style={styles.cell2}>{item.saldoTotal}</Text>
+                <Text style={[styles.cell1,
+                   { color: item.saldoTotal < 300 ? 'red' : 'black' }
+                ]}>{item.nomeProduto}</Text>
+                <Text style={[
+                  styles.cell2,
+                  { color: item.saldoTotal < 300 ? 'red' : 'black' }]}
+                >{item.saldoTotal}</Text>
                 <View>
                   <Button
                     title="Alterar saldo"
@@ -49,7 +54,11 @@ const ProductsTable = () => {
        <AddProducts 
         produtoSelecionado={selectedProduct}
         atualizarLista={getProducts}>
-       </AddProducts>  
+       </AddProducts>
+
+          <View>
+            <Button title="Atualizar saldo" onPress={() => getProducts()} />
+          </View>
         </ScrollView>
       </View>
     )
@@ -79,7 +88,6 @@ const styles = StyleSheet.create({
       borderBottomColor: '#ddd',
     },
     cell1: {
-      //flex: 1,
       width:130,
       justifyContent: 'center',
     },

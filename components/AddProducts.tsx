@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, TextInput, Text, View, Button, KeyboardAvoidingView } from 'react-native';
 
@@ -127,9 +126,6 @@ const AddProducts = ({produtoSelecionado, atualizarLista}:any) => {
             <Button onPress={(e) => handleSubmit(e, 'remocao')} title="Remover"></Button>
           </View>
 
-          <View>
-            <Button title="Atualizar saldo" onPress={() => atualizarLista()} />
-          </View>
           {
             error &&
             <View>

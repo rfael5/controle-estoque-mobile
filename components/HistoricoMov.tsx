@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, ScrollView, View, Text, Button, TextInput } from 'react-native';
+import { StyleSheet, ScrollView, View, Text, Button, TextInput, Modal, TouchableOpacity } from 'react-native';
 import Card from './small-components/Card';
 
 const HistoricoMov = () => {
@@ -117,7 +117,8 @@ export default HistoricoMov;
 
 const styles = StyleSheet.create({
     wrapper:{
-        backgroundColor:'white'
+        backgroundColor:'white',
+        paddingTop:25
     },
     tableContainer: {
         height:500
@@ -140,12 +141,34 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingHorizontal: 20,
-        paddingBottom:50,
+        paddingBottom:70,
         marginBottom:7,
         marginTop:7
     },
     container: { 
         padding: 0,
         borderBlockColor: 'black'
+    },
+    modalBox:{
+        flex:1,
+        justifyContent:'center',
+        alignItems:'center',
+        marginTop:22
+    },
+    modalContent:{
+        margin:20,
+        backgroundColor:'white',
+        borderRadius:20,
+        width:'90%',
+        padding:35,
+        alignItems:'center',
+        shadowColor:'#000',
+        shadowOffset:{
+            width:0,
+            height:2
+        },
+        shadowOpacity:0.25,
+        shadowRadius:4,
+        elevation:5
     }
 });
