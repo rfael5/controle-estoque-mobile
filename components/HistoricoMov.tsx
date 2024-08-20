@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, ScrollView, View, Text, Button, TextInput, Modal, TouchableOpacity } from 'react-native';
+import { StyleSheet, ScrollView, View, Text, Button, TextInput } from 'react-native';
 import Card from './small-components/Card';
 
 const HistoricoMov = () => {
